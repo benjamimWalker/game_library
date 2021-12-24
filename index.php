@@ -9,15 +9,53 @@
     <title>Game Listing</title>
 </head>
 <body>
+
+<?php
+require_once 'includes/data.php';
+?>
+
 <div id="body">
     <h1>Choose a game</h1>
     <table class="listing">
-        <tr><td>Image<td>Name<td>Adm
-        <tr><td>Image<td>Name<td>Adm
-        <tr><td>Image<td>Name<td>Adm
-        <tr><td>Image<td>Name<td>Adm
-        <tr><td>Image<td>Name<td>Adm
-        <tr><td>Image<td>Name<td>Adm
+        <?php
+        $query = $database->query('select * from games order by name');
+        if (!$query) { print 'Something went wrong';}
+        else {
+            if ($query->num_rows == 0) {
+                print 'No register found';
+            }
+            else {
+                while ($reg = $query->fetch_object()) {
+                    echo "<tr><td><img src=\"images/$reg->cover\" alt=\"images/indisponivel\"><td>$reg->name";
+                    echo "<td>Adm";
+                }
+            }
+        }
+        ?>
+        <tr>
+            <td>Image
+            <td>Name
+            <td>Adm
+        <tr>
+            <td>Image
+            <td>Name
+            <td>Adm
+        <tr>
+            <td>Image
+            <td>Name
+            <td>Adm
+        <tr>
+            <td>Image
+            <td>Name
+            <td>Adm
+        <tr>
+            <td>Image
+            <td>Name
+            <td>Adm
+        <tr>
+            <td>Image
+            <td>Name
+            <td>Adm
     </table>
 </div>
 
