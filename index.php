@@ -12,6 +12,7 @@
 
 <?php
 require_once 'includes/data.php';
+require_once 'includes/functions.php';
 ?>
 
 <div id="body">
@@ -19,43 +20,21 @@ require_once 'includes/data.php';
     <table class="listing">
         <?php
         $query = $database->query('select * from games order by name');
-        if (!$query) { print 'Something went wrong';}
+        if (!$query) {print 'Something went wrong';}
         else {
             if ($query->num_rows == 0) {
                 print 'No register found';
             }
             else {
                 while ($reg = $query->fetch_object()) {
-                    echo "<tr><td><img src=\"images/$reg->cover\" alt=\"images/indisponivel\"><td>$reg->name";
+                    $t = thumb($reg->cover);
+                    echo "<tr><td><img src=$t alt=\"images/indisponivel\" class='mini'>";
+                    echo "<td> <a href='details.php?cod=$reg->cod'>$reg->name</a>";
                     echo "<td>Adm";
                 }
             }
         }
         ?>
-        <tr>
-            <td>Image
-            <td>Name
-            <td>Adm
-        <tr>
-            <td>Image
-            <td>Name
-            <td>Adm
-        <tr>
-            <td>Image
-            <td>Name
-            <td>Adm
-        <tr>
-            <td>Image
-            <td>Name
-            <td>Adm
-        <tr>
-            <td>Image
-            <td>Name
-            <td>Adm
-        <tr>
-            <td>Image
-            <td>Name
-            <td>Adm
     </table>
 </div>
 

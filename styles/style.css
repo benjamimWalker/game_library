@@ -35,3 +35,15 @@ table.listing td:nth-child(1) {
 table.listing td:nth-child(3) {
     width: 90px;
 }
+
+img.mini{
+    width: 60px;
+}
+
+table.details {
+    width: 100%;
+}
+
+img.full {
+
+}
