@@ -15,6 +15,7 @@ require_once 'includes/functions.php';
 ?>
 <div id="body">
     <?php
+    include_once 'top.php';
     $cod = $_GET['cod'] ?? 0;
     $query = $database->query("select * from games where cod = $cod");
     ?>
@@ -29,7 +30,8 @@ require_once 'includes/functions.php';
                 echo "
                   <tr>
             <td rowspan='3'> <img src='images/$reg->cover' class='full'>
-            <td> $reg->name
+            <td> <h2>$reg->name</h2>
+            Nota: " . number_format($reg->rating, 1) . "/10.0 
         <tr>
             <td> $reg->description
         <tr>
@@ -41,6 +43,8 @@ require_once 'includes/functions.php';
 
         ?>
     </table>
+    <a href="index.php"> <img src="icons/icoback.png"></a>
 </div>
+<?php require_once 'bottom.php' ?>
 </body>
 </html>
