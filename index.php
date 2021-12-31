@@ -15,22 +15,28 @@ require_once 'includes/data.php';
 require_once 'includes/functions.php';
 
 $order = $_GET['o'] ?? 'n';
+$c = $_GET['c'] ?? '';
 ?>
 
 <div id="body">
     <?php include_once 'top.php'?>
     <h1>Choose a game</h1>
     <form method="get" id="search" action="index.php">
-        Order: <a href="index.php?o=n"> Name </a>
-        | <a href="index.php?o=p"> Producer </a>
-        | <a href="index.php?o=n1"> High Rating </a>
-        | <a href="index.php?o=n2"> Low Rating | </a>
+        Order: <a href="index.php?o=n&c=<?php echo $c;?>"> Name </a>
+        | <a href="index.php?o=p&c=<?php echo $c;?>"> Producer </a>
+        | <a href="index.php?o=n1&c=<?php echo $c;?>"> High Rating </a>
+        | <a href="index.php?o=n2&c=<?php echo $c;?>"> Low Rating </a>
+        | <a href="index.php"> Show All </a>
         Search <input type="text" name="c" size="10" maxlength="40"/>
         <input type="submit" value="ok">
     </form>
     <table class="listing">
+
         <?php
         $q = 'select j.cod, j.name, g.genre, j.cover, p.producer from games j join genres g on j.genre = g.cod join producers p on j.producer = p.cod ';
+        if (!empty($c)) {
+            $q .= "where j.name like '%$c%' or g.genre like '%$c%' or p.producer like '%$c%' ";
+        }
         switch ($order) {
             case 'p':
                 $q .= 'ORDER BY p.producer';

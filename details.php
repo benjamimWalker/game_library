@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/style.css"/>
     <title>Description</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <?php
@@ -43,7 +44,7 @@ require_once 'includes/functions.php';
 
         ?>
     </table>
-    <a href="index.php"> <img src="icons/icoback.png"></a>
+    <a href="index.php"> <?php echo back();?>
 </div>
 <?php require_once 'bottom.php' ?>
 </body>

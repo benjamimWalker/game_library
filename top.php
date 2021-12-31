@@ -1,4 +1,4 @@
 <?php
 echo '<header>';
-echo 'enter';
+echo 'Enter';
 echo '</header>';

@@ -8,3 +8,7 @@ function thumb($arq): string
     }
     return $path;
 }
+
+function back(): string {
+    return '<span class="material-icons">arrow_back</span></a>';
+}

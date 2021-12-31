@@ -1,6 +1,7 @@
 body {
-    background-color: #8d8a8a;
+    background-color: #261C2C;
     font-family: Ubuntu, sans-serif;
+    color: #6E85B2;
 }
 header{
     text-align: right;
@@ -19,8 +20,8 @@ div#body {
     width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: #9b9999;
-    box-shadow: 0 0 30px #7c7979;
+    background-color: #3E2C41;
+    box-shadow: 0 0 30px #5C527F;
     border-radius: 10px;
 }
 
@@ -38,7 +39,7 @@ table.listing td {
 }
 
 table.listing tr:nth-child(even) {
-    background-color: #8a8585;
+    background-color: #4b4369;
 }
 
 table.listing td:nth-child(1) {
@@ -48,6 +49,13 @@ table.listing td:nth-child(1) {
 table.listing td:nth-child(3) {
     width: 90px;
 }
+
+a:link, a:visited,  a:hover, a:active
+{
+    color: #bbeae3;
+    text-decoration: dashed;
+}
+
 
 img.mini {
     width: 60px;
