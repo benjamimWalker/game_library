@@ -3,19 +3,21 @@ body {
     font-family: Ubuntu, sans-serif;
     color: #6E85B2;
 }
-header{
+
+header {
     text-align: right;
     font-size: 15px;
 }
 
-input{
+input {
     background-color: #c0bdbd;
 }
 
-form#search{
+form#search {
     font-size: 15px;
     text-align: right;
 }
+
 div#body {
     width: 800px;
     margin: auto;
@@ -50,8 +52,7 @@ table.listing td:nth-child(3) {
     width: 90px;
 }
 
-a:link, a:visited,  a:hover, a:active
-{
+a:link, a:visited, a:hover, a:active {
     color: #bbeae3;
     text-decoration: dashed;
 }
@@ -78,4 +79,28 @@ footer {
     text-align: center;
     font-family: "JetBrains Mono Medium", sans-serif;
     font-size: 16px;
+}
+
+div.success {
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(98, 225, 98, 0.57);
+    color: rgb(1, 94, 1);
+}
+
+div.warning {
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(134, 130, 77, 0.68);
+    color: rgb(199, 136, 0);
+}
+
+div.error {
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(234, 41, 73, 0.54);
+    color: rgb(129, 0, 0);
 }

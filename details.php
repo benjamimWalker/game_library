@@ -13,6 +13,7 @@
 <?php
 require_once 'includes/data.php';
 require_once 'includes/functions.php';
+require_once 'includes/login.php';
 ?>
 <div id="body">
     <?php
@@ -30,7 +31,7 @@ require_once 'includes/functions.php';
                 $reg = $query->fetch_object();
                 echo "
                   <tr>
-            <td rowspan='3'> <img src='images/$reg->cover' class='full'>
+            <td rowspan='3'> <img src='images/$reg->cover' class='full' alt='Image'>
             <td> <h2>$reg->name</h2>
             Nota: " . number_format($reg->rating, 1) . "/10.0 
         <tr>
